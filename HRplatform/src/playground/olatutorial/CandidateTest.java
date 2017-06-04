@@ -34,5 +34,21 @@ public class CandidateTest {
 //		Then
 		assertEquals("Education: AGH Kraków", candidate.getActivitySummary(2005));
 	}
+	
+	@Test
+	public final void testAddExperience() {
+//		Given
+		Candidate candidate = new Candidate();
+		String employer = "tom tom";
+		String jobTitle = "cartographer";
+		int fromYear = 2004;
+		int toYear = 2007;
+		
+//		When
+		candidate.addExperience(employer, jobTitle,fromYear,toYear);
+		
+//		Then
+		assertEquals("Experience: cartographer at tom tom", candidate.getExperienceSummary(2005));
+	}
 
 }
